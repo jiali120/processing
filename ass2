@@ -1,1 +1,57 @@
 
+// Art website: https://www.gracedegennaro.com/
+// Art information: Emanation (Dusk, Night, Dawn), Walk the Line, Center for Maine Contemporary Art, Rockland, ME
+
+void setup(){
+  //set the backgroud size
+  size(900, 900);
+}
+
+void draw(){
+  
+  // Background color
+  background(0);
+  
+  // Make a blue circle and move it to center
+  fill(#2899C4);
+  pushMatrix(); 
+  translate(width/2, height/2);
+  scale(1);
+  circle(0,0,200);
+  popMatrix();
+  
+  // Make a green cube and move it to center
+  fill(#2B6C49);
+  pushMatrix();
+  translate(width/2, height/2);
+  scale(1);
+  noStroke();
+  rect(-50, -50, 100, 100, 0);
+  popMatrix();
+  
+  
+  // Make a white circle and move it to center 
+  fill(#FCFEFF);
+  pushMatrix();
+  translate(width/2, height/2);
+  scale(1);
+  circle(0,0,30);
+  popMatrix();
+  
+  // Make 6 lines of dots
+  for(int i=0; i<180; i+=10){
+     pushMatrix();
+     //lines position
+     translate(width/2, height/2);
+     rotate(radians(i));
+     //line's long and dots count
+     for(int x=-400; x<= 400; x+=10){ 
+        pushMatrix();
+        translate(x, 0);
+        scale(1); 
+        circle(0,0,3);
+        popMatrix();
+      }  
+     popMatrix();   
+  }
+}
